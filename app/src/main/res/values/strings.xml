@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MultiAppliyFromLens</string>
+    <string name="appTitle">多功能鏡頭應用</string>
+    <string name="appTitleStart">開始</string>
+    <string name="btnTextInput">手動輸入</string> <string/>
+
+</resources>

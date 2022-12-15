@@ -14,8 +14,8 @@ public class PokerRecommandFragment extends Fragment
     }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.pokerrecommandfragment, container, false);
-        return root;
+        View viewPokerCommandInit = inflater.inflate(R.layout.pokerrecommandfragment, container, false);
+        return viewPokerCommandInit;
     }
 
     @Override

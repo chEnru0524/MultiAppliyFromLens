@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerCharacterValue">
+        <item>使用者</item>
+        <item>對手</item>
+        <item>已翻開牌面</item>
+    </string-array>
+</resources>

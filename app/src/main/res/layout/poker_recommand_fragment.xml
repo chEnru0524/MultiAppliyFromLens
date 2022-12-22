@@ -14,12 +14,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/btnTextInput"
+        android:text="@string/btn_data_input"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgbtnSelf"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="0.861" />
 
     <ImageButton
         android:id="@+id/imgbtnSelf"
@@ -38,7 +39,7 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageButton
-        android:id="@+id/imgbtnCom"
+        android:id="@+id/imgbtnOpp"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="132dp"
@@ -50,7 +51,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.093"
+        app:layout_constraintVertical_bias="0.016"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageButton
@@ -58,11 +59,13 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnOpp"
         app:srcCompat="@mipmap/ic_launcher" />
+
+
 </android.support.constraint.ConstraintLayout>

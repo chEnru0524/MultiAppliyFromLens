@@ -1,6 +1,5 @@
 package com.example.user.multiappliyfromlens;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,7 +20,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
-        View viewMainInit = inflater.inflate(R.layout.mainfragment, container, false);
+        View viewMainInit = inflater.inflate(R.layout.main_fragment, container, false);
         btnstart = (Button)viewMainInit.findViewById(R.id.btn_start);
         btnstart.setOnClickListener(this);
 

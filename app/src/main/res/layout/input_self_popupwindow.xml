@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/textCardInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="153dp"
+        android:ems="10"
+        android:hint="@string/plaintext_card_input_hint"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spInputType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="214dp"
+        android:entries="@array/spinnerCharacterValue" />
+
+    <Button
+        android:id="@+id/btnInputcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="175dp"
+        android:text="@string/btn_card_inputOK" />
+
+</RelativeLayout>

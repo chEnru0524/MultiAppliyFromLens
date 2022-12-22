@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">MultiAppliyFromLens</string>
-    <string name="appTitle">多功能鏡頭應用</string>
-    <string name="appTitleStart">開始</string>
-    <string name="btnTextInput">手動輸入</string> <string/>
-
+    <string name="app_title">多功能鏡頭應用</string>
+    <string name="app_title_start">開始</string>
+    <string name="btn_data_input">手動輸入</string>
+    <string name="btn_card_inputOK">確認</string>
+    <string name="plaintext_card_input_hint">花色+點數</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.user.multiappliyfromlens;
+package com.example.user.multiappliyfromlens.BaseClass;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;

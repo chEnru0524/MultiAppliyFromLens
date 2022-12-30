@@ -1,15 +1,15 @@
-package com.example.user.multiappliyfromlens;
+package com.example.user.multiappliyfromlens.Fragment;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
+import com.example.user.multiappliyfromlens.R;
 
 public class MainFragment extends BaseFragment implements View.OnClickListener {
     Button btnstart = null;

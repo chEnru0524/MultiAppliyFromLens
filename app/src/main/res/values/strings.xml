@@ -5,4 +5,16 @@
     <string name="btn_data_input">手動輸入</string>
     <string name="btn_card_inputOK">確認</string>
     <string name="plaintext_card_input_hint">花色+點數</string>
+    <string name="title_activity_drawer_main">DrawerMainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="nav_title_translate">圖片自動翻譯</string>
+    <string name="nav_title_poker_command">撲克出牌推薦</string>
+    <string name="title_activity_main_drawer">MainDrawerActivity</string>
 </resources>

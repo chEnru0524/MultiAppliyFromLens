@@ -5,4 +5,26 @@
         <item>對手</item>
         <item>已翻開牌面</item>
     </string-array>
+    <string-array name="spinnerColorValue">
+        <item>黑桃</item>
+        <item>紅心</item>
+        <item>方塊</item>
+        <item>梅花</item>
+    </string-array>
+    <string-array name="spinnePointValue">
+        <item>A</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>J</item>
+        <item>Q</item>
+        <item>K</item>
+    </string-array>
 </resources>

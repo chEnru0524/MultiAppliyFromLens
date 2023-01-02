@@ -1,6 +1,8 @@
 package com.example.user.multiappliyfromlens.Fragment;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,6 +12,8 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.FileProvider;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +25,8 @@ import com.example.user.multiappliyfromlens.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Random;
 
 public class CameraFragment extends BaseFragment
 {
@@ -47,24 +53,32 @@ public class CameraFragment extends BaseFragment
     }
     private void saveSetting()
     {
-        strSavePath =Environment.getExternalStorageDirectory() + "/Photos";
-        String fileName = System.currentTimeMillis() + ".jpg"; // 使用系統時間來對照片進行命名，保證唯一性
-        fileSaved = new File(strSavePath, fileName); // 建立文件的保存路徑
-        if(!fileSaved.exists())
-        {
-            fileSaved.mkdirs();
-        }
 
+        strSavePath =  "/save_photos";
+        String root = Environment.getExternalStorageDirectory().toString();
+        File folder = new File(root + strSavePath);
+        folder.mkdirs();
 
+        String fileName = System.currentTimeMillis() + ".jpeg"; // 使用系統時間來對照片進行命名，保證唯一性
+
+        fileSaved = new File(folder, fileName); // 建立文件的保存路徑
+
+//        ContentValues contentValues = new ContentValues(1);
+//        contentValues.put(MediaStore.Images.Media.DATA, fileSaved.getAbsolutePath());
+//        Uri fileUri = getActivity().getApplication().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+//        System.out.println("Path : "+fileSaved.getAbsolutePath());
+//        System.out.println("fileURI : "+fileUri);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
     }
     private View.OnClickListener CameraClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             if(v.getId()==R.id.btnTakePhoto)
             {
-                saveSetting();
-                Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cInt,Image_Capture_Code);//start activity
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                //saveSetting(intent);
+
+                startActivityForResult(intent,Image_Capture_Code);//start activity
             }
             else if(v.getId() == R.id.btnTakePhotoConfirm)
             {
@@ -74,6 +88,18 @@ public class CameraFragment extends BaseFragment
             }
         }
     };
+    private void savePhotos(Bitmap bpSavedPhoto)
+    {
+        saveSetting();
+        try {
+            FileOutputStream out = new FileOutputStream(fileSaved);
+            bpSavedPhoto.compress(Bitmap.CompressFormat.JPEG, 90, out);
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -81,8 +107,11 @@ public class CameraFragment extends BaseFragment
         {
             if (resultCode == Activity.RESULT_OK) {
                 Bitmap bp = (Bitmap) data.getExtras().get("data");
-                imgPhoto.setImageBitmap(bp);
-                //imgPhoto.setImageURI(Uri.fromFile(fileSaved));
+                //imgPhoto.setImageBitmap(bp);
+                savePhotos(bp);
+                System.out.println("Uri : "+Uri.fromFile(fileSaved));
+                imgPhoto.setImageURI(Uri.fromFile(fileSaved));
+
             } else if (resultCode == Activity.RESULT_CANCELED) {
 
             }

@@ -10,8 +10,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 
+import com.example.user.multiappliyfromlens.BackHandlerHelper;
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
 import com.example.user.multiappliyfromlens.Fragment.MainFragment;
 import com.example.user.multiappliyfromlens.Fragment.Poker_RecommandFragment;
@@ -79,9 +81,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     {
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.rlMainContainer,fragment).commit();
-
-
-
     }
 
+
+    @Override
+    public void onBackPressed() {
+        if (!BackHandlerHelper.handleBackPress(this)) {
+            super.onBackPressed();
+        }
+    }
 }

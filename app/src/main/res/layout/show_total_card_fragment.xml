@@ -1,12 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-
-    <android.support.v7.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-</android.widget.LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingLeft="100dp">
+
+            <TextView
+                android:id="@+id/tvRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="29dp"
+                android:layout_marginRight="60dp"
+                android:text="紅牌"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tvBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="29dp"
+                android:text="黑牌"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/lvPoint"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:paddingTop="80dp">
+
+        </ListView>
+
+        <ListView
+            android:id="@+id/lv_red_number"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:paddingTop="80dp" />
+
+        <ListView
+            android:id="@+id/lv_black_number"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:paddingTop="80dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

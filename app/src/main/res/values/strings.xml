@@ -20,4 +20,5 @@
     <string name="Camera_capture" >拍照</string>
     <string name="btn_camera_input">拍照輸入</string>
     <string name="Camera_captture_confirm" >確認</string>
+    <string name="view_point">點數</string>
 </resources>

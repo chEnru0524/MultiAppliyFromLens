@@ -7,10 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.user.multiappliyfromlens.BackHandlerHelper;
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
 import com.example.user.multiappliyfromlens.Control.PokerRecommandManager;
 import com.example.user.multiappliyfromlens.Interface.OnFragmentInteractionListener;
+import com.example.user.multiappliyfromlens.Poker.Card;
 import com.example.user.multiappliyfromlens.R;
 
 import java.util.List;
@@ -20,6 +23,9 @@ public class Poker_RecommandFragment extends BaseFragment
 {
     private Button btnCameraInput = null;
     private Button btnSelfInput = null;
+    private ImageButton imgbtnShowSelf = null;
+    private ImageButton imgbtnShowOpp = null;
+    private ImageButton imgbtnShowUnknown = null;
     private List<Button> list_showDetailCard = null;
     private OnFragmentInteractionListener fragmentInteractionListener;
     private PokerRecommandManager managerPokerCard;
@@ -28,6 +34,9 @@ public class Poker_RecommandFragment extends BaseFragment
     {
         btnCameraInput = (Button)initView.findViewById(R.id.btnInputCamera);
         btnSelfInput = (Button)initView.findViewById(R.id.btnInputSelf);
+        imgbtnShowSelf  = (ImageButton) initView.findViewById(R.id.imgbtnSelf);
+        imgbtnShowOpp  = (ImageButton) initView.findViewById(R.id.imgbtnOpp);
+        imgbtnShowUnknown  = (ImageButton) initView.findViewById(R.id.imgbtnBoard);
         fragmentTransaction = getFragmentManager().beginTransaction();
         managerPokerCard  = new PokerRecommandManager();
         setListener();
@@ -51,6 +60,9 @@ public class Poker_RecommandFragment extends BaseFragment
         super.setListener();
         btnSelfInput.setOnClickListener(clickListener);
         btnCameraInput.setOnClickListener(clickListener);
+        imgbtnShowSelf.setOnClickListener(clickListener);
+        imgbtnShowOpp.setOnClickListener(clickListener);
+        imgbtnShowUnknown.setOnClickListener(clickListener);
     }
     @Override
     public void onAttach(Activity activity) {
@@ -70,15 +82,15 @@ public class Poker_RecommandFragment extends BaseFragment
 
             if(v.getId() == R.id.imgbtnOpp)
             {
-
+                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_OPP,managerPokerCard));
             }
             else  if(v.getId() == R.id.imgbtnBoard)
             {
-
+                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_UNKNOWN,managerPokerCard));
             }
             else  if(v.getId() == R.id.imgbtnSelf)
             {
-
+                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_SELF,managerPokerCard));
             }
             else  if(v.getId() == R.id.btnInputCamera)
             {
@@ -93,5 +105,8 @@ public class Poker_RecommandFragment extends BaseFragment
         }
     };
 
-
+    @Override
+    public boolean onBackPressed() {
+         return BackHandlerHelper.handleBackPress(this);
+    }
 }

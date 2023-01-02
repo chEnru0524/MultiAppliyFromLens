@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.user.multiappliyfromlens.BackHandlerHelper;
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
 import com.example.user.multiappliyfromlens.Poker.Card;
 import com.example.user.multiappliyfromlens.R;
@@ -41,5 +42,9 @@ public class Poker_InputSelfFragment extends BaseFragment implements View.OnClic
         fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.rlMainContainer,new Poker_RecommandFragment());
         fragmentTransaction.commitNowAllowingStateLoss();
+    }
+    @Override
+    public boolean onBackPressed() {
+        return BackHandlerHelper.handleBackPress(this);
     }
 }

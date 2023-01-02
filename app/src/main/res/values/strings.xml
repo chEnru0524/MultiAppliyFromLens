@@ -17,4 +17,7 @@
     <string name="nav_title_translate">圖片自動翻譯</string>
     <string name="nav_title_poker_command">撲克出牌推薦</string>
     <string name="title_activity_main_drawer">MainDrawerActivity</string>
+    <string name="Camera_capture" >拍照</string>
+    <string name="btn_camera_input">拍照輸入</string>
+    <string name="Camera_captture_confirm" >確認</string>
 </resources>

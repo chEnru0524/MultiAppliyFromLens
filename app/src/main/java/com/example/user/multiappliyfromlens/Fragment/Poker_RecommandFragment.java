@@ -9,7 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
-import com.example.user.multiappliyfromlens.OnFragmentInteractionListener;
+import com.example.user.multiappliyfromlens.Control.PokerRecommandManager;
+import com.example.user.multiappliyfromlens.Interface.OnFragmentInteractionListener;
 import com.example.user.multiappliyfromlens.R;
 
 import java.util.List;
@@ -17,16 +18,18 @@ import java.util.List;
 
 public class Poker_RecommandFragment extends BaseFragment
 {
+    private Button btnCameraInput = null;
     private Button btnSelfInput = null;
     private List<Button> list_showDetailCard = null;
     private OnFragmentInteractionListener fragmentInteractionListener;
-
+    private PokerRecommandManager managerPokerCard;
     @Override
     public void initView(View initView)
     {
-
+        btnCameraInput = (Button)initView.findViewById(R.id.btnInputCamera);
         btnSelfInput = (Button)initView.findViewById(R.id.btnInputSelf);
         fragmentTransaction = getFragmentManager().beginTransaction();
+        managerPokerCard  = new PokerRecommandManager();
         setListener();
     }
     @Override
@@ -47,6 +50,7 @@ public class Poker_RecommandFragment extends BaseFragment
     {
         super.setListener();
         btnSelfInput.setOnClickListener(clickListener);
+        btnCameraInput.setOnClickListener(clickListener);
     }
     @Override
     public void onAttach(Activity activity) {
@@ -58,7 +62,8 @@ public class Poker_RecommandFragment extends BaseFragment
                     + " must implement OnFragmentInteractionListener");
         }
     }
-    private View.OnClickListener clickListener = new View.OnClickListener() {
+    private View.OnClickListener clickListener = new View.OnClickListener()
+    {
         @Override
         public void onClick(View v)
         {
@@ -75,10 +80,15 @@ public class Poker_RecommandFragment extends BaseFragment
             {
 
             }
+            else  if(v.getId() == R.id.btnInputCamera)
+            {
+                fragmentInteractionListener.changeFragment(new CameraFragment());
+            }
             else  if(v.getId() == R.id.btnInputSelf)
             {
                 fragmentInteractionListener.changeFragment(new Poker_InputSelfFragment());
             }
+
 
         }
     };

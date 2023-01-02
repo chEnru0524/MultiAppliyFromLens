@@ -1,4 +1,4 @@
-package com.example.user.multiappliyfromlens;
+package com.example.user.multiappliyfromlens.Interface;
 
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
 

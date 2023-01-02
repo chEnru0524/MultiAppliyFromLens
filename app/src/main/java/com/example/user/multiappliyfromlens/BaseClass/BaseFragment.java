@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
-import com.example.user.multiappliyfromlens.OnFragmentInteractionListener;
+import com.example.user.multiappliyfromlens.Interface.OnFragmentInteractionListener;
 
 public abstract class BaseFragment extends Fragment
 {

@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
 import com.example.user.multiappliyfromlens.Fragment.MainFragment;
 import com.example.user.multiappliyfromlens.Fragment.Poker_RecommandFragment;
-import com.example.user.multiappliyfromlens.OnFragmentInteractionListener;
+import com.example.user.multiappliyfromlens.Interface.OnFragmentInteractionListener;
 import com.example.user.multiappliyfromlens.R;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener

@@ -34,7 +34,7 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.rlMainContainer,new PokerRecommandFragment());
+        fragmentTransaction.replace(R.id.rlMainContainer,new Poker_RecommandFragment());
         fragmentTransaction.commitNowAllowingStateLoss();
     }
 

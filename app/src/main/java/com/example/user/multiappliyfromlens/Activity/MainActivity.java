@@ -12,21 +12,23 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
 import com.example.user.multiappliyfromlens.Fragment.MainFragment;
-import com.example.user.multiappliyfromlens.Fragment.PokerRecommandFragment;
+import com.example.user.multiappliyfromlens.Fragment.Poker_RecommandFragment;
+import com.example.user.multiappliyfromlens.OnFragmentInteractionListener;
 import com.example.user.multiappliyfromlens.R;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener
 {
-    private FragmentManager fragmentManager;
-    private FragmentTransaction fragmentTransaction;
-    private DrawerLayout dlMain;
-    private Toolbar toolbar;
-    private NavigationView navigation_view;
-
+    private FragmentManager fragmentManager = null;
+    private FragmentTransaction fragmentTransaction = null;
+    private DrawerLayout dlMain = null;
+    private Toolbar toolbar = null;
+    private NavigationView navigation_view = null;
+    private BaseFragment changeFragment = null;
     private void initView()
     {
-        dlMain = (DrawerLayout) findViewById(R.id.drawer_layout);
+        dlMain = (DrawerLayout) findViewById(R.id.dlMain);
         navigation_view = (NavigationView) findViewById(R.id.nav_view);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
@@ -50,14 +52,13 @@ public class MainActivity extends AppCompatActivity
                 int id = item.getItemId();
                 if(id == R.id.nav_translate)
                 {
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.rlMainContainer,new MainFragment()).commit();
+
+                    changeFragment(new MainFragment());
                     return true;
                 }
                 else if(id == R.id.nav_poker_command)
                 {
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.rlMainContainer,new PokerRecommandFragment()).commit();
+                    changeFragment(new Poker_RecommandFragment());
                     return true;
                 }
                 return false;
@@ -72,4 +73,15 @@ public class MainActivity extends AppCompatActivity
         init();
         setListener();
     }
+
+    @Override
+    public void changeFragment(BaseFragment fragment)
+    {
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.rlMainContainer,fragment).commit();
+
+
+
+    }
+
 }

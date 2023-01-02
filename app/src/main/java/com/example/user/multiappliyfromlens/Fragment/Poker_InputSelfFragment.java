@@ -8,26 +8,26 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
+import com.example.user.multiappliyfromlens.Poker.Card;
 import com.example.user.multiappliyfromlens.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-
-public class PokerRecommandFragment extends BaseFragment implements View.OnClickListener
+public class Poker_InputSelfFragment extends BaseFragment implements View.OnClickListener
 {
-    private Button btnSelfInput = null;
-    private List<Button> list_showDetailCard = null;
-
-
+    private Button btnConfirm = null;
+    private List<Card> alCards = new ArrayList<Card>();
     @Override
     public void initView(View initView)
     {
-        btnSelfInput = (Button)initView.findViewById(R.id.btn_start);
+        btnConfirm = initView.findViewById(R.id.btnInputConfirm);
+        btnConfirm.setOnClickListener(this);
         fragmentTransaction = getFragmentManager().beginTransaction();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View viewPokerCommandInit = inflater.inflate(R.layout.poker_recommand_fragment, container, false);
+        View viewPokerCommandInit = inflater.inflate(R.layout.poker_input_self_fragment, container, false);
         initView(viewPokerCommandInit);
         return viewPokerCommandInit;
     }
@@ -39,7 +39,7 @@ public class PokerRecommandFragment extends BaseFragment implements View.OnClick
     @Override
     public void onClick(View v) {
         fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.rlMainContainer,new PokerRecommandFragment());
+        fragmentTransaction.replace(R.id.rlMainContainer,new Poker_RecommandFragment());
         fragmentTransaction.commitNowAllowingStateLoss();
     }
 }

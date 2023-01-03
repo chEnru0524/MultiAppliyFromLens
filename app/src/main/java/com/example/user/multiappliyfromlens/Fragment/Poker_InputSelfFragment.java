@@ -66,7 +66,8 @@ public class Poker_InputSelfFragment extends BaseFragment implements View.OnClic
         String strInputCardsMessage = etInputCards.getText().toString();
         if(getString(R.string.sp_user)==strFunction)
         {
-            strInputCardsMessage = "As,3s,8c,9c,Jc,6h,Th,Jh,3d,6d,Qd,Kd";
+            //test case
+            //strInputCardsMessage = "As,3s,8c,9c,Jc,6h,Th,Jh,3d,6d,Qd,Kd";
             PokerRecommandManager.insertHandCards(strInputCardsMessage);
         }
         else if(getString(R.string.sp_table)==strFunction)

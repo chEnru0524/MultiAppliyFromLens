@@ -17,7 +17,7 @@ public class PokerShowAdapter extends BaseAdapter {
 
     private List<String> arrayShow;
     private LayoutInflater inflater;
-    static class ViewHolder{
+    private static class ViewHolder{
         RelativeLayout rlBorder;
         TextView tvPoint;
     }

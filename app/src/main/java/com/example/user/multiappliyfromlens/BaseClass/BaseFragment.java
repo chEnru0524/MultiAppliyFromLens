@@ -13,6 +13,5 @@ public abstract class BaseFragment extends Fragment implements FragmentBackHandl
     protected FragmentTransaction fragmentTransaction;
     protected void initView(View initView) {setListener();}
     protected void setListener(){}
-    protected void initview(){}
 
 }

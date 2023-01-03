@@ -24,9 +24,9 @@ public class Poker_RecommandFragment extends BaseFragment
     private Button btnCameraInput = null;
     private Button btnSelfInput = null;
     private Button btnReset = null;
-    private ImageButton imgbtnShowSelf = null;
-    private ImageButton imgbtnShowOpp = null;
-    private ImageButton imgbtnShowUnknown = null;
+    private Button btnShowSelf = null;
+    private Button btnShowOpp = null;
+    private Button btnShowUnknown = null;
     private List<Button> list_showDetailCard = null;
     private OnFragmentInteractionListener fragmentInteractionListener;
     @Override
@@ -35,9 +35,9 @@ public class Poker_RecommandFragment extends BaseFragment
         btnCameraInput = (Button)initView.findViewById(R.id.btnInputCamera);
         btnSelfInput = (Button)initView.findViewById(R.id.btnInputSelf);
         btnReset = (Button)initView.findViewById(R.id.btnReset);
-        imgbtnShowSelf  = (ImageButton) initView.findViewById(R.id.imgbtnSelf);
-        imgbtnShowOpp  = (ImageButton) initView.findViewById(R.id.imgbtnOpp);
-        imgbtnShowUnknown  = (ImageButton) initView.findViewById(R.id.imgbtnBoard);
+        btnShowSelf  = (Button) initView.findViewById(R.id.imgbtnSelf);
+        btnShowOpp  = (Button) initView.findViewById(R.id.imgbtnOpp);
+        btnShowUnknown  = (Button) initView.findViewById(R.id.imgbtnBoard);
         fragmentTransaction = getFragmentManager().beginTransaction();
         setListener();
     }
@@ -60,9 +60,9 @@ public class Poker_RecommandFragment extends BaseFragment
         super.setListener();
         btnSelfInput.setOnClickListener(clickListener);
         btnCameraInput.setOnClickListener(clickListener);
-        imgbtnShowSelf.setOnClickListener(clickListener);
-        imgbtnShowOpp.setOnClickListener(clickListener);
-        imgbtnShowUnknown.setOnClickListener(clickListener);
+        btnShowSelf.setOnClickListener(clickListener);
+        btnShowOpp.setOnClickListener(clickListener);
+        btnShowUnknown.setOnClickListener(clickListener);
         btnReset.setOnClickListener(clickListener);
     }
     @Override
@@ -105,7 +105,6 @@ public class Poker_RecommandFragment extends BaseFragment
             {
                 PokerRecommandManager.reset();
             }
-
 
         }
     };

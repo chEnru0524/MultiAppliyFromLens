@@ -14,7 +14,6 @@ import com.example.user.multiappliyfromlens.R;
 
 public class MainFragment extends BaseFragment implements View.OnClickListener {
     Button btnstart = null;
-    private FragmentManager fmManger;
 
 
 

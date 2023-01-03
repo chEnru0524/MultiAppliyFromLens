@@ -27,14 +27,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     private DrawerLayout dlMain = null;
     private Toolbar toolbar = null;
     private NavigationView navigation_view = null;
-    private BaseFragment changeFragment = null;
     private void initView()
     {
         dlMain = (DrawerLayout) findViewById(R.id.dlMain);
         navigation_view = (NavigationView) findViewById(R.id.nav_view);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
-    private void init()
+    private void initData()
     {
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,dlMain,toolbar,R.string.drawer_open,R.string.drawer_close);
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_main);
         initView();
-        init();
+        initData();
         setListener();
     }
 

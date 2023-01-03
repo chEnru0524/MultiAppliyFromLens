@@ -1,14 +1,11 @@
 package com.example.user.multiappliyfromlens.Control;
 
-import com.example.user.multiappliyfromlens.BaseClass.BaseManager;
 import com.example.user.multiappliyfromlens.Poker.Card;
 import com.example.user.multiappliyfromlens.PokerRecommandModel.PokerRecommandConnecter;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class PokerRecommandManager extends BaseManager
-{
+public class PokerRecommandManager {
 
     private static  PokerRecommandConnecter connecter = new PokerRecommandConnecter();
     public static final String POKERHANDINSERT = "/fcupokerhandinsert";

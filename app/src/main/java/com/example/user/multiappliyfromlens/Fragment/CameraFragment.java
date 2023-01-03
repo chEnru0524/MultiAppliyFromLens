@@ -121,6 +121,10 @@ public class CameraFragment extends BaseFragment
     }
     @Override
     public boolean onBackPressed() {
+        fragmentTransaction = getFragmentManager().beginTransaction();
+
+        fragmentTransaction.replace(R.id.rlMainContainer,new Poker_RecommandFragment());
+        fragmentTransaction.commit();
         return BackHandlerHelper.handleBackPress(this);
 }
 }

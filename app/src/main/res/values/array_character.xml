@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="spinnerCharacterValue">
-        <item>使用者</item>
-        <item>對手</item>
-        <item>已翻開牌面</item>
+        <item>@string/sp_user</item>
+        <item>@string/sp_table</item>
+        <item>@string/sp_own_play</item>
+        <item>@string/sp_other_play</item>
+        <item>@string/sp_own_fold</item>
+        <item>@string/sp_other_fold</item>
     </string-array>
     <string-array name="spinnerColorValue">
         <item>黑桃</item>
@@ -12,19 +15,18 @@
         <item>梅花</item>
     </string-array>
     <string-array name="spinnePointValue">
-        <item>A</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>J</item>
-        <item>Q</item>
-        <item>K</item>
+        <item>@string/sp_A</item>
+        <item>@string/sp_2</item>
+        <item>@string/sp_3</item>
+        <item>@string/sp_4</item>
+        <item>@string/sp_5</item>
+        <item>@string/sp_6</item>
+        <item>@string/sp_7</item>
+        <item>@string/sp_8</item>
+        <item>@string/sp_9</item>
+        <item>@string/sp_10</item>
+        <item>@string/sp_J</item>
+        <item>@string/sp_Q</item>
+        <item>@string/sp_K</item>
     </string-array>
 </resources>

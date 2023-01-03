@@ -21,4 +21,25 @@
     <string name="btn_camera_input">拍照輸入</string>
     <string name="Camera_captture_confirm" >確認</string>
     <string name="view_point">點數</string>
+    <string name="sp_user">新增手牌</string>
+    <string name="sp_table">新增檯面撲克</string>
+    <string name="sp_own_play">己方出牌</string>
+    <string name="sp_other_play">對方出牌</string>
+    <string name="sp_own_fold">己方棄牌</string>
+    <string name="sp_other_fold">對方棄牌</string>
+
+    <string name="sp_A">A</string>
+    <string name="sp_2">2</string>
+    <string name="sp_3">3</string>
+    <string name="sp_4">4</string>
+    <string name="sp_5">5</string>
+    <string name="sp_6">6</string>
+    <string name="sp_7">7</string>
+    <string name="sp_8">8</string>
+    <string name="sp_9">9</string>
+    <string name="sp_10">10</string>
+    <string name="sp_J">J</string>
+    <string name="sp_Q">Q</string>
+    <string name="sp_K">K</string>
+    <string name="etInputCards">撲克輸入，以逗號分隔</string>
 </resources>

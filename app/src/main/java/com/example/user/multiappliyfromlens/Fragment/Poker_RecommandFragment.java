@@ -23,22 +23,22 @@ public class Poker_RecommandFragment extends BaseFragment
 {
     private Button btnCameraInput = null;
     private Button btnSelfInput = null;
+    private Button btnReset = null;
     private ImageButton imgbtnShowSelf = null;
     private ImageButton imgbtnShowOpp = null;
     private ImageButton imgbtnShowUnknown = null;
     private List<Button> list_showDetailCard = null;
     private OnFragmentInteractionListener fragmentInteractionListener;
-    private PokerRecommandManager managerPokerCard;
     @Override
     public void initView(View initView)
     {
         btnCameraInput = (Button)initView.findViewById(R.id.btnInputCamera);
         btnSelfInput = (Button)initView.findViewById(R.id.btnInputSelf);
+        btnReset = (Button)initView.findViewById(R.id.btnReset);
         imgbtnShowSelf  = (ImageButton) initView.findViewById(R.id.imgbtnSelf);
         imgbtnShowOpp  = (ImageButton) initView.findViewById(R.id.imgbtnOpp);
         imgbtnShowUnknown  = (ImageButton) initView.findViewById(R.id.imgbtnBoard);
         fragmentTransaction = getFragmentManager().beginTransaction();
-        managerPokerCard  = new PokerRecommandManager();
         setListener();
     }
     @Override
@@ -63,6 +63,7 @@ public class Poker_RecommandFragment extends BaseFragment
         imgbtnShowSelf.setOnClickListener(clickListener);
         imgbtnShowOpp.setOnClickListener(clickListener);
         imgbtnShowUnknown.setOnClickListener(clickListener);
+        btnReset.setOnClickListener(clickListener);
     }
     @Override
     public void onAttach(Activity activity) {
@@ -82,15 +83,15 @@ public class Poker_RecommandFragment extends BaseFragment
 
             if(v.getId() == R.id.imgbtnOpp)
             {
-                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_OPP,managerPokerCard));
+                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_OPP));
             }
             else  if(v.getId() == R.id.imgbtnBoard)
             {
-                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_UNKNOWN,managerPokerCard));
+                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_UNKNOWN));
             }
             else  if(v.getId() == R.id.imgbtnSelf)
             {
-                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_SELF,managerPokerCard));
+                fragmentInteractionListener.changeFragment(new Poker_ShowCardFragment(Card.CHARACTER_SELF));
             }
             else  if(v.getId() == R.id.btnInputCamera)
             {
@@ -100,6 +101,10 @@ public class Poker_RecommandFragment extends BaseFragment
             {
                 fragmentInteractionListener.changeFragment(new Poker_InputSelfFragment());
             }
+            else  if(v.getId() == R.id.btnReset)
+            {
+                PokerRecommandManager.reset();
+            }
 
 
         }
@@ -107,6 +112,10 @@ public class Poker_RecommandFragment extends BaseFragment
 
     @Override
     public boolean onBackPressed() {
-         return BackHandlerHelper.handleBackPress(this);
+        fragmentTransaction = getFragmentManager().beginTransaction();
+
+        fragmentTransaction.replace(R.id.rlMainContainer,new MainFragment());
+        fragmentTransaction.commit();
+        return BackHandlerHelper.handleBackPress(this);
     }
 }

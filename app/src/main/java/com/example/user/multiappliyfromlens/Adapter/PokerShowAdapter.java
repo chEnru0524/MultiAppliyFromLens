@@ -15,26 +15,26 @@ import java.util.List;
 
 public class PokerShowAdapter extends BaseAdapter {
 
-    private String[] arrayShow;
+    private List<String> arrayShow;
     private LayoutInflater inflater;
     static class ViewHolder{
         RelativeLayout rlBorder;
         TextView tvPoint;
     }
 
-    public PokerShowAdapter(String[] arrayShow, LayoutInflater inflater) {
+    public PokerShowAdapter( List<String> arrayShow, LayoutInflater inflater) {
         this.arrayShow = arrayShow;
         this.inflater = inflater;
     }
 
     @Override
     public int getCount() {
-        return arrayShow.length;//13
+        return arrayShow.size();//13
     }
 
     @Override
     public Object getItem(int position) {
-        return arrayShow[position];
+        return arrayShow.get(position);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class PokerShowAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.tvPoint.setText(arrayShow[position]);
+        viewHolder.tvPoint.setText(arrayShow.get(position));
         return convertView;
     }
 }

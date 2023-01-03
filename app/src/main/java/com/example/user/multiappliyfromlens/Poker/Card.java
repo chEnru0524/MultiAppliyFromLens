@@ -6,10 +6,14 @@ public class Card
     public static final int CHARACTER_OPP = 1;
     public static final int CHARACTER_UNKNOWN = 2;
 
-    public String strPoint = null;
-    public String strColor = null;
+    public String strPoint = "";
+    public String strColor = "";
     public int iCharacter = 0;
 
+    public Card()
+    {
+
+    }
     public Card(String strPoint, String strColor) {
         this.strPoint = strPoint;
         this.strColor = strColor;
@@ -23,11 +27,15 @@ public class Card
         this.iCharacter = iCharacter;
     }
 
-    public int getStrCharacter() {
+    public String toString()
+    {
+        return strPoint+strColor;
+    }
+    public int getintCharacter() {
         return iCharacter;
     }
 
-    public void setStrCharacter(int iCharacter) {
+    public void setintCharacter(int iCharacter) {
         this.iCharacter = iCharacter;
     }
 

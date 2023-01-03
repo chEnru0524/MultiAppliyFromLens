@@ -80,14 +80,17 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     public void changeFragment(BaseFragment fragment)
     {
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.rlMainContainer,fragment).commit();
+        fragmentTransaction.replace(R.id.rlMainContainer,fragment);
+        fragmentTransaction.commit();
     }
 
 
     @Override
     public void onBackPressed() {
         if (!BackHandlerHelper.handleBackPress(this)) {
-            super.onBackPressed();
+
+            //
+            // super.onBackPressed();
         }
     }
 }

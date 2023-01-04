@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.user.multiappliyfromlens.Activity.MainActivity;
 import com.example.user.multiappliyfromlens.BackHandlerHelper;
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
 import com.example.user.multiappliyfromlens.Control.PokerRecommandManager;
@@ -95,7 +96,7 @@ public class Poker_RecommandFragment extends BaseFragment
             }
             else  if(v.getId() == R.id.btnInputCamera)
             {
-                fragmentInteractionListener.changeFragment(new CameraFragment());
+                fragmentInteractionListener.changeFragment(new CameraFragment(MainActivity.POKERRECOMMANDFRAGMENT));
             }
             else  if(v.getId() == R.id.btnInputSelf)
             {

@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.user.multiappliyfromlens.Activity.MainActivity;
 import com.example.user.multiappliyfromlens.BackHandlerHelper;
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
 import com.example.user.multiappliyfromlens.R;
@@ -39,6 +40,20 @@ public class CameraFragment extends BaseFragment
     private ImageView imgPhoto = null;
     private String strSavePath = "";
     private File fileSaved = null;
+    private int iPreFragment = 0;
+    private BaseFragment fragmentPreFragment = null;
+    public CameraFragment(int preFragment) {
+        this.iPreFragment = preFragment;
+        if(MainActivity.MAINFRAGMENT==preFragment)
+        {
+            fragmentPreFragment = new MainFragment();
+        }
+        else if(MainActivity.POKERRECOMMANDFRAGMENT == preFragment)
+        {
+            fragmentPreFragment = new Poker_RecommandFragment();
+        }
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -84,7 +99,7 @@ public class CameraFragment extends BaseFragment
             else if(v.getId() == R.id.btnTakePhotoConfirm)
             {
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.rlMainContainer,new Poker_RecommandFragment());
+                fragmentTransaction.replace(R.id.rlMainContainer,fragmentPreFragment);
                 fragmentTransaction.commitNowAllowingStateLoss();
             }
         }
@@ -123,7 +138,7 @@ public class CameraFragment extends BaseFragment
     public boolean onBackPressed() {
         fragmentTransaction = getFragmentManager().beginTransaction();
 
-        fragmentTransaction.replace(R.id.rlMainContainer,new Poker_RecommandFragment());
+        fragmentTransaction.replace(R.id.rlMainContainer,fragmentPreFragment);
         fragmentTransaction.commit();
         return BackHandlerHelper.handleBackPress(this);
 }

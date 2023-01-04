@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import com.example.user.multiappliyfromlens.BackHandlerHelper;
 import com.example.user.multiappliyfromlens.BaseClass.BaseFragment;
+import com.example.user.multiappliyfromlens.Fragment.CameraFragment;
 import com.example.user.multiappliyfromlens.Fragment.MainFragment;
 import com.example.user.multiappliyfromlens.Fragment.Poker_RecommandFragment;
 import com.example.user.multiappliyfromlens.Interface.OnFragmentInteractionListener;
@@ -22,6 +23,10 @@ import com.example.user.multiappliyfromlens.R;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener
 {
+
+    public static final int MAINFRAGMENT = 0;
+    public static final int POKERRECOMMANDFRAGMENT = 1;
+
     private FragmentManager fragmentManager = null;
     private FragmentTransaction fragmentTransaction = null;
     private DrawerLayout dlMain = null;
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
                 if(id == R.id.nav_translate)
                 {
 
-                    changeFragment(new MainFragment());
+                    changeFragment(new CameraFragment(MAINFRAGMENT));
                     return true;
                 }
                 else if(id == R.id.nav_poker_command)
